@@ -17,6 +17,7 @@
 <script>
     import TestCaseView from "./TestCaseView";
     import TestCase from '../js_module/testcase/testcase.js'
+
     export default {
         name: "TestCases",
         components: {
@@ -24,27 +25,27 @@
         },
         data() {
             return {
-                testcases: []  // todo: 现在的情况是五传递testcase对象传递，有传递层次过多，无法维护了
+                testcases: []
             }
         },
         created() {
             var pool = [
-                'url',
-                'pubdate',
-                'name',
-                'title',
-                'text',
-                'wenshu',
-                'tset1',
-                'youhaap'
-            ];
-            for (let key of pool){
-                this.testcases.push(new TestCase(key))
+                    'url',
+                    'pubdate',
+                    'name',
+                    'title',
+                    'text',
+                    'wenshu',
+                    'tset1',
+                    'youhaap'
+                ];
+            for (let key of pool) {
+                this.testcases.push(new TestCase(key));
             }
         },
         methods: {
-            startTest(){
-                console.log(this.testcases)
+            startTest() {
+                console.log(this.testcases.pop().toJSON())
             }
         }
     }

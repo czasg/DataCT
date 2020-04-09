@@ -1,6 +1,6 @@
 <template>
     <div class="test-case-col">
-        <el-switch v-model="switch_flag" :active-text="text" @click="$emit('toggle-bool')" v-if="typeof value === 'boolean'"></el-switch>
+        <el-switch v-model="switch_flag" :active-text="text" @change="$emit('toggle-bool')" v-if="typeof value === 'boolean'"></el-switch>
         <div v-else>{{value}}</div>
     </div>
 </template>

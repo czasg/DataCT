@@ -7,12 +7,12 @@
         </el-col>
         <el-col :span="8">
             <slot name="col2">
-                <TestCaseCol :value="testcase.checkNone" @toggle-bool="testcase.checkNone = !testcase.checkNone" :text="'checkNone'"/>
+                <TestCaseCol :value="testcase.checkNone" @toggle-bool="testcase.toggleNone()" text="checkNone"/>
             </slot>
         </el-col>
         <el-col :span="8">
             <slot name="col3">
-                <TestCaseCol :value="testcase.checkRepeat" @toggle-bool="testcase.checkRepeat = !testcase.checkRepeat" :text="'checkRepeat'"/>
+                <TestCaseCol :value="testcase.checkRepeat" @toggle-bool="testcase.toggleRepeat()" text="checkRepeat"/>
             </slot>
         </el-col>
     </el-row>

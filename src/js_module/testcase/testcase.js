@@ -4,9 +4,26 @@ class TestCase {
         this.key = key;
         this.init();
     }
-    init(){
+
+    init() {
         this.checkNone = true;
         this.checkRepeat = true;
+    }
+
+    toggleNone() {
+        this.checkNone = !this.checkNone;
+    }
+
+    toggleRepeat() {
+        this.checkRepeat = !this.checkRepeat;
+    }
+
+    toJSON() {
+        return {
+            key: this.key,
+            checkNone: this.checkNone,
+            checkRepeat: this.checkRepeat
+        }
     }
 }
 
