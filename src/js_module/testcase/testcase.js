@@ -1,13 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 class TestCase {
-    constructor(key) {
-        this.key = key;
+    constructor(column) {
+        this.column = column;
         this.init();
     }
 
     init() {
         this.checkNone = true;
         this.checkRepeat = true;
+        this.checkDate = false;
+        this.checkContain = '';
     }
 
     toggleNone() {
@@ -18,11 +20,20 @@ class TestCase {
         this.checkRepeat = !this.checkRepeat;
     }
 
+    toggleDate() {
+        this.checkDate = !this.checkDate;
+    }
+
+    addContain(contain) {
+        this.checkContain = contain;
+    }
+
     toJSON() {
         return {
-            key: this.key,
+            column: this.column,
             checkNone: this.checkNone,
-            checkRepeat: this.checkRepeat
+            checkRepeat: this.checkRepeat,
+            checkContain: this.checkContain
         }
     }
 }

@@ -1,19 +1,17 @@
 <template>
     <div id="app">
         <HeaderRow/>
-        <TestCases/>
+        <router-view/>
     </div>
 </template>
 
 <script>
     import HeaderRow from "@/components/HeaderRow";
-    import TestCases from "@/components/TestCases";
 
     export default {
         name: 'App',
         components: {
             HeaderRow,
-            TestCases
         }
     }
 </script>
